@@ -1,0 +1,12 @@
+@import "./public/styles/utils/vars";
+
+.pokemons-list {
+  .card {
+    background: rgb(121, 210, 127);
+  }
+
+  .badge-primary {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

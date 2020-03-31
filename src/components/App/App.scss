@@ -1,0 +1,161 @@
+
+@import "../../../public/styles/utils/mixins";
+
+.body {
+  @include text-style;
+  font-size: 13px;
+  background: #f0f6fc;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    .lead {
+      font-size: 12px;
+    }
+
+    .display-3 {
+      font-size: 42px;
+    }
+
+  }
+
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pokemons-list {
+  flex-basis: 63%;
+
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+    order: 2;
+  }
+}
+
+.flex-container {
+  @include flex (space-between, flex-start, wrap);
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    .card-header {
+      font-size: 12px;
+    }
+
+    .pokemon {
+      height: 130px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 80%;
+    margin: auto;
+    grid-template-columns: repeat(1, 1fr);
+
+    .pokemon {
+      height: 170px;
+    }
+  }
+}
+
+.mb-3,
+.my-3 {
+  margin-bottom: 0 !important;
+}
+
+.loader {
+  display: block;
+  text-align: center;
+  & img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.pokemon {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  object-position: center center;
+
+  &:hover {
+    animation: flip-vertical-right 1s
+      cubic-bezier(0.45, 0.03, 0.51, 0.95) infinite;
+  }
+}
+
+.details {
+  flex-basis: 35%;
+  position: sticky;
+  top: 20px;
+
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+    order: 1;
+    position: static;
+    margin-bottom: 20px;
+
+    .list-group-flush .list-group-item {
+      padding: 5px;
+    }
+
+    .card-header {
+      font-size: 12px;
+    }
+
+    .card-body {
+      display: flex;
+
+      .pokemon {
+        flex-basis: 200px;
+        width: 200px;
+        margin-right: 40px;
+      }
+
+      .list-group {
+        flex-basis: calc(100% - 200px);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card-body {
+      display: block;
+
+      .pokemon {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes flip-vertical-right {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+@keyframes flip-vertical-right {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}

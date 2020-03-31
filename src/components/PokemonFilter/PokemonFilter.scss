@@ -1,0 +1,23 @@
+@import "./public/styles/utils/vars";
+@import "./public/styles/utils/mixins";
+
+.filter {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  @include flex (space-between, center, wrap);
+
+  .badge-primary {
+    margin: 0 12px 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+
+    &:hover {
+      background: $accent;
+    }
+  }
+}
+
+.my-4 {
+  border-top: 1px solid rgba(200,200,200,0.1);
+}
