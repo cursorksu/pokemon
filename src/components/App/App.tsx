@@ -32,7 +32,7 @@ export const App: FC = () => {
 
           return {
             ...result,
-            img: `https://pokeres.bastionbot.org/images/pokemon/${pokemonItem.id}.png`,
+            img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonItem.id}.png`,
             pokemonItem,
           };
         }));

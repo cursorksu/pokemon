@@ -15,7 +15,7 @@ export const PokemonList: FC<Props> = ({ pokemons, heroClick, isLoading }) => {
 
   return (
     <div className="grid-container">
-      {pokemons.map(hero => (
+      {pokemons && pokemons.map(hero => (
         <div
           key={hero.name}
           className="card mb-3"

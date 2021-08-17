@@ -13,8 +13,9 @@ export const getData = async <T>(url: string): Promise<T> => {
 
 export const getPokemonItem = (name: string|number) => {
   return getData<HeroFromServer>(`${name}`).then((item) => {
+    console.log({item})
     return {
-      img: `https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`,
+      img: item.sprites.front_default,
       id: item.id,
       name: item.name,
       types: item.types.map((t: TypesFromServer) => t.type.name),
